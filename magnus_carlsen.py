@@ -14,7 +14,7 @@ st.title('Search a player\'s games between two dates!')
 
 
 
-start_date=st.date_input(label="Start Date",value='2005-01-01', min_value=datetime.date(year=1890, month=12, day=31))
+start_date=st.date_input(label="Start Date",value='1950-01-01', min_value=datetime.date(year=1890, month=12, day=31))
 end_date=st.date_input(label='End date',value='2021-01-01', max_value=datetime.date(year=2022, month=12, day=31))
 
 start_date=pd.Timestamp(start_date)
@@ -39,9 +39,9 @@ game_and_eco=game_info_df[['game_id','eco']].drop_duplicates()
 #https://stackoverflow.com/questions/53106428/pandas-merge-returning-only-null-values
 game_and_eco_and_name=game_and_eco.merge(eco_codes_df)
 
+games_without_draws=game_info_df[game_info_df.winner!='draw']
 
-
-players_name=st.selectbox(label="Select player",options=game_info_df['winner'].unique().tolist())
+players_name=st.selectbox(label="Select player",options=games_without_draws['winner'].unique().tolist())
 
 game_info_df['date_played']=pd.to_datetime(game_info_df['date_played'],format='%Y.%m.%d',errors='coerce')
 #game_info_df['date_played']=game_info_df['date_played'].dt.date
@@ -75,7 +75,7 @@ st.write(f"Number of games won: {won_games}")
 st.write(f"Number of games drawn: {drawn_games}")
 st.write(f"Number of games lost: {lost_games}")
 
-st.write(f"Total games: {total_games}")
+st.write(f"Total games:{total_games}")
 
 games_selected_and_openings=games_requested.merge(game_and_eco_and_name)
 #games_selected_and_opening_names=pd.concat([games_selected_and_openings,eco_codes_df])
@@ -103,5 +103,8 @@ st.pyplot(opening_countplot.figure)
 st.write('Debugging stuff')
 st.dataframe(game_info_df)
 st.dataframe(player_games)
+st.dataframe(eco_codes_df)
+
+
 st.dataframe(eco_codes_df)
 
