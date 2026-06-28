@@ -8,6 +8,8 @@ import io
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+plt.style.use('dark_background')
+
 
 st.title('Search a player\'s games between two dates!')
 
