@@ -24,7 +24,7 @@ end_date=pd.Timestamp(end_date)
 
 
 game_info_df=pd.read_csv("chess_wc_history_game_info.csv")
-game_moves_df=pd.read_csv("chess_wc_history_moves.csv")
+#game_moves_df=pd.read_csv("chess_wc_history_moves.csv")
 eco_codes_df=pd.read_csv("eco_codes.csv")
 
 
@@ -102,8 +102,6 @@ st.pyplot(opening_countplot.figure)
 
 st.write('Debugging stuff')
 st.dataframe(game_info_df)
-
 st.dataframe(player_games)
-
 st.dataframe(eco_codes_df)
 
