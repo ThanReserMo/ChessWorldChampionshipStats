@@ -75,7 +75,7 @@ st.write(f"Number of games won: {won_games}")
 st.write(f"Number of games drawn: {drawn_games}")
 st.write(f"Number of games lost: {lost_games}")
 
-st.write(f"Total games:{total_games}")
+st.write(f"Total games: {total_games}")
 
 games_selected_and_openings=games_requested.merge(game_and_eco_and_name)
 #games_selected_and_opening_names=pd.concat([games_selected_and_openings,eco_codes_df])
