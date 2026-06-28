@@ -55,7 +55,7 @@ game_info_df['date_played']=pd.to_datetime(game_info_df['date_played'],format='%
 
 
 
-player_games=game_info_df[(game_info_df['white']==players_name)|(game_info_df['black']==players_name)]
+player_games=game_info_df[(game_info_df['white']==players_name)|(game_info_df['black']==players_name)|(game_info_df['winner']==players_name)|(game_info_df['loser']==players_name)]
 
 #for move in range(len(game_moves_df))
 #games_requested=player_games[player_games['date_played'].between(start_date,end_date)]
