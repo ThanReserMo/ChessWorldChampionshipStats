@@ -43,6 +43,8 @@ game_and_eco_and_name=game_and_eco.merge(eco_codes_df)
 
 games_without_draws=game_info_df[game_info_df.winner!='draw']
 
+games_without_draws.sort('winner')
+
 players_name=st.selectbox(label="Select player",options=games_without_draws['winner'].unique().tolist())
 
 game_info_df['date_played']=pd.to_datetime(game_info_df['date_played'],format='%Y.%m.%d',errors='coerce')
