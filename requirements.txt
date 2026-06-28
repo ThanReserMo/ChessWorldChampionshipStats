@@ -1,0 +1,9 @@
+streamlit 
+pandas
+chess
+pgn2data
+Openix 
+datetime
+io
+seaborn 
+matplotlib
