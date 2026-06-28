@@ -34,6 +34,8 @@ eco_codes_df=pd.read_csv("eco_codes.csv")
 game_info_df.winner=game_info_df.winner.str.split(',').str[0]
 game_info_df.white=game_info_df.white.str.split(',').str[0]
 game_info_df.black=game_info_df.black.str.split(',').str[0]
+game_info_df.loser=game_info_df.loser.str.split(',').str[0]
+
 
 #https://stackoverflow.com/questions/49110156/finding-unique-combinations-of-columns-from-a-dataframe
 game_and_eco=game_info_df[['game_id','eco']].drop_duplicates()
