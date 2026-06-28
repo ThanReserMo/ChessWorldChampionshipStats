@@ -4,6 +4,5 @@ chess
 pgn2data
 Openix 
 datetime
-io
 seaborn 
 matplotlib
